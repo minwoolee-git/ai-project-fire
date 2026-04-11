@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Fill in the data</h1>
+
+{% if error %}
+<div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {{ form.longitude.label(class="form-label") }}
+        {{ form.longitude(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.latitude.label(class="form-label") }}
+        {{ form.latitude(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.month.label(class="form-label") }}
+        {{ form.month(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.day.label(class="form-label") }}
+        {{ form.day(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.avg_temp.label(class="form-label") }}
+        {{ form.avg_temp(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.max_temp.label(class="form-label") }}
+        {{ form.max_temp(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.max_wind_speed.label(class="form-label") }}
+        {{ form.max_wind_speed(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.avg_wind.label(class="form-label") }}
+        {{ form.avg_wind(class="form-control") }}
+    </div>
+
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}
